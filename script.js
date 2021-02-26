@@ -7,6 +7,13 @@ let educationData
 let canvas = d3.select('#canvas')
 
 let drawMap = () => {
+
+    canvas.selectAll('path')
+    .data(countyData)
+    .enter()
+    .append('path')
+    .attr('d', d3.geoPath())
+    .attr('class', 'county')
  
 }
 // converts url data into json object
